@@ -98,12 +98,12 @@ _abi = [
 ]
 
 
-class getState:
+class SendReward:
 
     def __init__(self):
         self.myContract = kit.w3.eth.contract(address=_address, abi=_abi)
 
-    def get_state(self, humidity):
+    def send_hum_value(self, humidity):
         state = self.myContract.functions.getHumidity(humidity).call()
 
         return state
@@ -119,9 +119,8 @@ class getState:
         send_address = self.myContract.functions.sender().call()
         get_address = self.myContract.functions.getReward().call()
 
-        if now_balance > reward & now_state == True:
-
-            nonce = kit.w.eth.getTransactionCount(send_address)
+        if now_state & reward < now_balance:
+            nonce = kit.w3.eth.getTransactionCount(send_address)
 
             tx = {
                 'nonce': nonce,
@@ -133,10 +132,12 @@ class getState:
 
             signed_tx = kit.w3.eth.account.signTransaction(tx, SECRET_KEY)
             tx_hash = kit.w3.eth.sendRawTransaction(signed_tx.rawTransaction)
-            balance = kit.w3.eth.getBalance(send_address)
+            balance = kit.w3.eth.getBalance(send_address) - reward
+
         else:
             print(f"the reward ({reward}) is greater than the balance ({now_balance})")
-            balance = now_balance
+            wei_balance = kit.w3.eth.getBalance(send_address)
+            balance = kit.w3.fromWei(wei_balance, 'ether')
             tx_hash = None
 
-            return balance, tx_hash
+        return balance, tx_hash
