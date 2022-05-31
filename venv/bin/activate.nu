@@ -1,6 +1,6 @@
 # Setting all environment variables for the venv
 let path-name = (if ((sys).host.name == "Windows") { "Path" } { "PATH" })
-let virtual-env = "/home/oscar/PycharmProjects/Celo_test/venv"
+let virtual-env = "/media/oscar/53d0d8e7-064c-4896-b149-1fafedf0f2d2/home/oscar/PycharmProjects/Celo_test/venv"
 let bin = "bin"
 let path-sep = ":"
 
@@ -38,4 +38,4 @@ let-env PROMPT_COMMAND = $new_prompt
 # We are using alias as the function definitions because only aliases can be
 # removed from the scope
 alias pydoc = python -m pydoc
-alias deactivate = source "/home/oscar/PycharmProjects/Celo_test/venv/bin/deactivate.nu"
+alias deactivate = source "/media/oscar/53d0d8e7-064c-4896-b149-1fafedf0f2d2/home/oscar/PycharmProjects/Celo_test/venv/bin/deactivate.nu"

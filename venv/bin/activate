@@ -44,7 +44,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV='/home/oscar/PycharmProjects/Celo_test/venv'
+VIRTUAL_ENV='/media/oscar/53d0d8e7-064c-4896-b149-1fafedf0f2d2/home/oscar/PycharmProjects/Celo_test/venv'
 if ([ "$OSTYPE" = "cygwin" ] || [ "$OSTYPE" = "msys" ]) && $(command -v cygpath &> /dev/null) ; then
     VIRTUAL_ENV=$(cygpath -u "$VIRTUAL_ENV")
 fi

@@ -6,7 +6,7 @@ with open("config.json", "r", encoding="utf-8") as file:
 SECRET_KEY = SECRETS_FILE["SECRET_KEY"]
 
 kit = Kit('https://alfajores-forno.celo-testnet.org')
-_address = "0xB706B78F296Ed29305d0671b5cE49c886Af648a1"
+_address_contract = "0xB706B78F296Ed29305d0671b5cE49c886Af648a1"
 _abi = [
     {
         "inputs": [
@@ -101,7 +101,7 @@ _abi = [
 class SendReward:
 
     def __init__(self):
-        self.myContract = kit.w3.eth.contract(address=_address, abi=_abi)
+        self.myContract = kit.w3.eth.contract(address=_address_contract, abi=_abi)
 
     def send_hum_value(self, humidity):
         state = self.myContract.functions.getHumidity(humidity).call()
@@ -119,7 +119,7 @@ class SendReward:
         send_address = self.myContract.functions.sender().call()
         get_address = self.myContract.functions.getReward().call()
 
-        if now_state & reward < now_balance:
+        if now_state and (reward < now_balance):
             nonce = kit.w3.eth.getTransactionCount(send_address)
 
             tx = {
@@ -132,7 +132,7 @@ class SendReward:
 
             signed_tx = kit.w3.eth.account.signTransaction(tx, SECRET_KEY)
             tx_hash = kit.w3.eth.sendRawTransaction(signed_tx.rawTransaction)
-            balance = kit.w3.eth.getBalance(send_address) - reward
+            balance = now_balance - reward
 
         else:
             print(f"the reward ({reward}) is greater than the balance ({now_balance})")
