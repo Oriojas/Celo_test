@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 from fastapi import FastAPI
 from starlette.requests import Request
 from starlette.templating import Jinja2Templates
@@ -65,7 +66,6 @@ async def send_tk(humidity: int, temp: float, source: str):
 async def dashboard(request: Request):
     subprocess.call("/media/oscar/53d0d8e7-064c-4896-b149-1fafedf0f2d2/home/oscar/PycharmProjects/Celo_test/dashboard.py", shell=True)
     return templates.TemplateResponse("new_plot.html", {"request": request})
-
 
 if __name__ == '__main__':
     uvicorn.run(app, host='0.0.0.0', port=8080)
