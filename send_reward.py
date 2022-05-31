@@ -6,7 +6,7 @@ with open("config.json", "r", encoding="utf-8") as file:
 SECRET_KEY = SECRETS_FILE["SECRET_KEY"]
 
 kit = Kit('https://alfajores-forno.celo-testnet.org')
-_address_contract = "0xB706B78F296Ed29305d0671b5cE49c886Af648a1"
+_address_contract = "0x7648d3fb14aa44A60C5713c1244b4F4C856d55B7"
 _abi = [
     {
         "inputs": [
