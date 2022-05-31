@@ -86,7 +86,7 @@ template = """<html>
             <h3>Funcionamiento DAPP</h3>
             <p>Esta DAPP toma datos de dos sensores que miden temperatura y humedad simulan medir estas variables de un sitio deforestado, mediante un fondo se recoge dinero para poder plantar los árboles y a medida que mejore el ambiente y los sensores lo midad se reparten las recompensas entre los implicador</p>
             <p>El contrato esta identificado como 0x7648d3fb14aa44A60C5713c1244b4F4C856d55B7 y envia celo de la billetera 0x5027323B073841Dfb6481F2a2AFf38c1f393B9fb a la billetera 0x5a7DaF22100F1950880F8385B1D79F9F86d15F4D, el limite que se plantéo es de 75% de humedad</p>
-            <p>Los sensores toman datos cada minuto y se envian a una base de datos tradicional, pero el registro de humedad se guarda en el contrato, el codigo fue desarrollado en python utilizando el <a href="https://github.com/blaize-tech/celo-sdk-py.git">celo python sdk</a> y el código se encuenta en el <a href="https://github.com/Oriojas/Celo_test.git">repositorio</a> 
+            <p>Los sensores toman datos cada minuto y se envian a una base de datos tradicional, pero el registro de humedad se guarda en el contrato, el codigo fue desarrollado en python utilizando el <a href="https://github.com/blaize-tech/celo-sdk-py.git">celo python sdk</a> y el código se encuenta en el <a href="https://github.com/Oriojas/Celo_test.git">repositorio Celo_test</a> 
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" 
