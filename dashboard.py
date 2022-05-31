@@ -5,9 +5,6 @@ import datetime
 import pyodbc
 import json
 
-with open("config.json", "r", encoding="utf-8") as file:
-    SECRETS_FILE = json.load(file)
-SECRET_KEY = SECRETS_FILE["SECRET_KEY"]
 
 with open("config.json", "r", encoding="utf-8") as file:
     SECRET_FILE = json.load(file)
@@ -19,8 +16,7 @@ PASSWORD = SECRET_FILE["PASSWORD"]
 DRIVER = SECRET_FILE["DRIVER"]
 
 # consulta a la base de datos
-with pyodbc.connect('DRIVER='+DRIVER+';SERVER=tcp:'+SERVER+';PORT=1433;DATABASE='+DATABASE+';UID='+USERNAME+';PWD=' +
-                    PASSWORD) as conn:
+with pyodbc.connect('DRIVER='+DRIVER+';SERVER=tcp:'+SERVER+';PORT=1433;DATABASE='+DATABASE+';UID='+USERNAME+';PWD=' + PASSWORD) as conn:
     sql_query = f'SELECT * FROM dbo.registro_h_t'
     DF = pd.read_sql(sql_query, conn)
 
