@@ -63,7 +63,7 @@ async def send_tk(humidity: int, temp: float, source: str):
 
 @app.get('/dashboard/')
 async def dashboard(request: Request):
-    subprocess.call("/home/oriojas/esp8266_dht11_azure/dashboard.py", shell=True)
+    subprocess.call("/media/oscar/53d0d8e7-064c-4896-b149-1fafedf0f2d2/home/oscar/PycharmProjects/Celo_test/dashboard.py", shell=True)
     return templates.TemplateResponse("new_plot.html", {"request": request})
 
 
