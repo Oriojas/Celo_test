@@ -9,4 +9,5 @@ La dapp tiene muchas oportunidades de UI/UX pero esa parte como desarrollador la
 El contrato esta desplegado con el identificador **0x7648d3fb14aa44A60C5713c1244b4F4C856d55B7** y la billetera de prueba destino de la recompensa es **0x5a7DaF22100F1950880F8385B1D79F9F86d15F4D** 
 
 ### Hardware utilizado
+En el siguiente link se puede tener un ejemplo de las conexiones y los componentes para el proyecto: <https://www.circuito.io/static/reply/index.html?solutionId=62a75f7a17a8ac00301ad77b&solutionPath=storage.circuito.io>
 ![img](hardware.jpg)
